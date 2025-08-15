@@ -15,7 +15,14 @@ function addATask() {
     spanText.classList.add('text');
 
     spanText.addEventListener('click', function () {
-        SpanText.classList.toggle('completed');
+        spanText.classList.toggle('completed');
+    });
+
+    const buttonComplete = document.createElement('button');
+    buttonComplete.textContent = '✓';
+    buttonComplete.classList.add('complete');
+    buttonComplete.addEventListener('click', function() {
+        spanText.classList.toggle('completed');
     });
 
     const buttonDelete = document.createElement('button');
@@ -26,6 +33,7 @@ function addATask() {
     });
 
     li.appendChild(spanText);
+    li.appendChild(buttonComplete);
     li.appendChild(buttonDelete);
 
     list.appendChild(li);
